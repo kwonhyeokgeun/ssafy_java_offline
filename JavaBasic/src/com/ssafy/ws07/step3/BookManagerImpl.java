@@ -1,11 +1,16 @@
 package com.ssafy.ws07.step3;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class BookManagerImpl implements IBookManager {
 	private static int MAX_SIZE = 100;
-	private Book[] books = new Book[MAX_SIZE];
-	private int size;
+	//private Book[] books = new Book[MAX_SIZE];
+	//private int size;
+	private List<Book> books = new ArrayList<>();
+	
+	
 	
 	private static IBookManager bm= new BookManagerImpl();
 	
@@ -17,7 +22,7 @@ public class BookManagerImpl implements IBookManager {
 	
 	@Override
 	public void add(Book book) {
-		if(size<MAX_SIZE) books[size++] = book;
+		if(books.size()<MAX_SIZE) books.add(book); 
 	}
 	
 	/**
@@ -26,12 +31,10 @@ public class BookManagerImpl implements IBookManager {
 	 */
 	@Override
 	public void remove(String isbn) {
-		for (int i = 0; i < size; ++i) {
+		for (int i =0; i< books.size(); ++i) {
 			// 삭제할 도서를 찾았다면 해당 도서 위치에 배열의 제일 마지막 도서를 복사
-			if (books[i].getIsbn().equals(isbn)) {
-				books[i] = books[size-1];
-				books[size-1]=null;			// 삭제된 도서 위치 null 처리
-				--size;						// 등록된 도서 수 감소
+			if (books.get(i).getIsbn().equals(isbn)) {
+				books.remove(i);	
 				break;
 			}
 		}
@@ -43,7 +46,9 @@ public class BookManagerImpl implements IBookManager {
 	 */
 	@Override
 	public Book[] getList() {
-		return Arrays.copyOfRange(books, 0, size);
+		Book[] result = new Book[books.size()];
+		books.toArray(result);
+		return result;
 	}
 	
 	/**
@@ -53,8 +58,9 @@ public class BookManagerImpl implements IBookManager {
 	 */
 	@Override
 	public Book searchByIsbn(String isbn) {
-		for (int i = 0; i < size; ++i) {
-			if (books[i].getIsbn().equals(isbn)) return books[i]; 
+		
+		for (int i = 0; i < books.size(); ++i) {
+			if (books.get(i).getIsbn().equals(isbn)) return books.get(i); 
 		}
 		return null;
 	}
@@ -66,18 +72,12 @@ public class BookManagerImpl implements IBookManager {
 	 */
 	@Override
 	public Book[] searchByTitle(String title) {
-		int count = 0; 
-		for (int i = 0; i < size; ++i) {	// 도서 제목을 포함하는 도서의 개수 카운트
-			if (books[i].getTitle().contains(title)) ++count;
+		ArrayList<Book> temp = new ArrayList<>();
+		for(Book book : books) {
+			if(book.getTitle().contains(title)) temp.add(book);
 		}
-		Book[] result = new Book[count];	// 결과 카운트만큼 배열 생성
-		int idx = 0;
-		for (int i = 0; i < size; ++i) {
-			if (books[i].getTitle().contains(title)) { // 도서 제목을 포함하는 도서만 배열에 담기
-				result[idx++] = books[i];
-			}
-		}
-		return result; 
+		Book[] result = new Book[temp.size()];
+		return temp.toArray(result);
 	}
 	
 	/**
@@ -86,18 +86,12 @@ public class BookManagerImpl implements IBookManager {
 	 */
 	@Override
 	public Magazine[] getMagazines() {
-		int count = 0;
-		for (int i = 0; i < size; ++i) {	// 잡지 개수 카운트
-			if (books[i] instanceof Magazine) ++count;
+		ArrayList<Magazine> temp = new ArrayList<>();
+		for(Book book : books) {
+			if(book instanceof Magazine) temp.add((Magazine)book);
 		}
-		Magazine[] result = new Magazine[count];	// 결과 카운트만큼 배열 생성
-		int idx = 0;
-		for (int i = 0; i < size; ++i) {
-			if (books[i] instanceof Magazine) {	// 잡지만 배열에 담기
-				result[idx++] = (Magazine)books[i];
-			}
-		}
-		return result;
+		Magazine[] result = new Magazine[temp.size()];
+		return temp.toArray(result);
 	} 
 	
 	/**
@@ -106,19 +100,12 @@ public class BookManagerImpl implements IBookManager {
 	 */
 	@Override
 	public Book[] getBooks() {
-		int count = 0; 
-		for (int i = 0; i < size; ++i) {
-			if (!(books[i] instanceof Magazine)) ++count;
+		ArrayList<Book> temp = new ArrayList<>();
+		for(Book book : books) {
+			if(!(book instanceof Magazine)) temp.add(book);
 		}
-		
-		Book[] result = new Book[count];
-		int idx = 0;
-		for (int i = 0; i < size; ++i) {
-			if (!(books[i] instanceof Magazine)) {
-				result[idx++] = books[i];
-			}
-		}
-		return result;
+		Book[] result = new Book[temp.size()];
+		return temp.toArray(result);
 	}
 	
 	/**
@@ -128,8 +115,8 @@ public class BookManagerImpl implements IBookManager {
 	@Override
 	public int getTotalPrice() {
 		int total = 0;
-		for (int i = 0; i < size; ++i) {
-			total += books[i].getPrice();
+		for(Book book : books) {
+			total+=book.getPrice();
 		}
 		return total;
 	}
@@ -140,6 +127,25 @@ public class BookManagerImpl implements IBookManager {
 	 */
 	@Override
 	public double getPriceAvg() {
-		return (double)getTotalPrice()/ size;
+		return (double)getTotalPrice()/ books.size();
+	}
+
+	@Override
+	public void sell(String isbn, int quantity) throws ISBNNotFoundException, QuantityException{
+		Book book = searchByIsbn(isbn);
+		if (book == null) throw new ISBNNotFoundException(isbn); //없는책
+		
+		int res = book.getQuantity() - quantity;  //양이 부족
+		if (res<0) throw new QuantityException();
+		
+		book.setQuantity(res);
+	}
+
+	@Override
+	public void buy(String isbn, int quantity) throws ISBNNotFoundException{
+		Book book = searchByIsbn(isbn);
+		if (book == null) throw new ISBNNotFoundException(isbn); //없는책
+		
+		book.setQuantity(book.getQuantity()+quantity);
 	}
 }
