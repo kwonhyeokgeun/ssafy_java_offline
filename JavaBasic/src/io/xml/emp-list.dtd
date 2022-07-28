@@ -1,0 +1,6 @@
+<!ELEMENT emp-list (emp*)>
+<!ELEMENT emp (emp-id,emp-nm,salary,enter-dt)>
+<!ELEMENT emp-id (#PCDATA)>
+<!ELEMENT emp-nm (#PCDATA)>
+<!ELEMENT salary (#PCDATA)>
+<!ELEMENT enter-dt (#PCDATA)>
