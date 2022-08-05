@@ -18,7 +18,12 @@ public class ItemTest {
 			al.add(new Item(2,"item2"));
 			System.out.println(al);
 			
+			//Comparable 방식
 			Collections.sort(al);
+			System.out.println(al);
+			
+			//람다 방식
+			Collections.sort(al,(o1,o2)->o1.itemId == o2.itemId ? o1.itemNm.compareTo(o2.itemNm) : o1.itemId - o2.itemId);
 			System.out.println(al);
 		}
 	}
