@@ -6,15 +6,15 @@ public class Test {
 		int n2 = 20;
 		
 		{
-			//#1. ÀÎÅÍÆäÀÌ½º¸¦ ±¸ÇöÇÑ Å¬·¡½º¸¦ »ç¿ë - MyFuncIFImpl
-			//±âº»ÀûÀÌ°í °íÀüÀûÀÎ ¹æ½Ä
+			//#1. ì¸í„°í˜ì´ìŠ¤ë¥¼ êµ¬í˜„í•œ í´ë˜ìŠ¤ë¥¼ ì‚¬ìš© - MyFuncIFImpl
+			//ê¸°ë³¸ì ì´ê³  ê³ ì „ì ì¸ ë°©ì‹
 			MyFuncIF func = new MyFuncIFImpl();
 			int result = func.proc1(n1, n2);
 			System.out.println(result); //30
 		}
 		{
-			//#2 ÀÎÅÍÆäÀÌ½º¸¦ ±¸ÇöÇÑ ÀÍ¸í Å¬·¡½º¸¦ »ç¿ë - MyFuncIFImpl »ç¿ë¾ÈÇÔ
-			//implementsÇØÁÙ ÇÊ¿ä¾ø¾î¼­ ÄÚµå°¡ °£¼ÒÈ­ µÇ°í Á» ´õ ´ÙÀÌ³ª¹ÍÇÑ ÄÚµùÀÌ °¡´É
+			//#2 ì¸í„°í˜ì´ìŠ¤ë¥¼ êµ¬í˜„í•œ ìµëª… í´ë˜ìŠ¤ë¥¼ ì‚¬ìš© - MyFuncIFImpl ì‚¬ìš©ì•ˆí•¨
+			//implementsí•´ì¤„ í•„ìš”ì—†ì–´ì„œ ì½”ë“œê°€ ê°„ì†Œí™” ë˜ê³  ì¢€ ë” ë‹¤ì´ë‚˜ë¯¹í•œ ì½”ë”©ì´ ê°€ëŠ¥
 			
 			MyFuncIF2 func2 = new MyFuncIF2() {
 				@Override
@@ -30,15 +30,15 @@ public class Test {
 			};
 			int result = func2.proc1(n1, n2);
 			System.out.println(result);  //30
-			result = func2.proc2(n1, n2); //¸ğµÎ È£Ãâ°¡´É ±×·¡¼­ ¼±ÅÃÀûÀÌ³ª °áÁ¤ÀûÀÌ ¾Æ´Ï´Ù.(?)
+			result = func2.proc2(n1, n2); //ëª¨ë‘ í˜¸ì¶œê°€ëŠ¥ ê·¸ë˜ì„œ ì„ íƒì ì´ë‚˜ ê²°ì •ì ì´ ì•„ë‹ˆë‹¤.(?)
 			System.out.println(result);  //-10
 		}
 		{
 			//#3 lambda first
-			//Functional Interface¸¦ ±¸ÇöÇÑ °´Ã¼´Â ¿ÀÁ÷ 'ÇÑ °¡Áö'¸¸ È£ÃâÇÒ ¼ö ÀÖ´Ù ==> °áÁ¤ÀûÀÌ´Ù.
-			//lambda´Â ÀüÁ¦ Á¶°ÇÀÌ Functional Interface¸¦ ±¸ÇöÇÑ °´Ã¼·Î¸¸ »ç¿ëÇÒ ¼ö ÀÖ´Ù!
-			MyFuncIF func = (i, j) -> {return i+j;};  //¶÷´Ù½Ä Ç¥Çö
-			//MyFuncIF func = (i, j) -> i+j;  //°°ÀºÀÇ¹Ì
+			//Functional Interfaceë¥¼ êµ¬í˜„í•œ ê°ì²´ëŠ” ì˜¤ì§ 'í•œ ê°€ì§€'ë§Œ í˜¸ì¶œí•  ìˆ˜ ìˆë‹¤ ==> ê²°ì •ì ì´ë‹¤.
+			//lambdaëŠ” ì „ì œ ì¡°ê±´ì´ Functional Interfaceë¥¼ êµ¬í˜„í•œ ê°ì²´ë¡œë§Œ ì‚¬ìš©í•  ìˆ˜ ìˆë‹¤!
+			MyFuncIF func = (i, j) -> {return i+j;};  //ëŒë‹¤ì‹ í‘œí˜„
+			//MyFuncIF func = (i, j) -> i+j;  //ê°™ì€ì˜ë¯¸
 			int result = func.proc1(n1, n2);
 			System.out.println(result);
 		}
@@ -48,14 +48,14 @@ public class Test {
 			MyFunc.m(func);   //8
 		}
 		{
-			//#5 ÀÌ·¸°Ô ÃÖ´ëÇÑ °£´ÜÇÏ°Ô
+			//#5 ì´ë ‡ê²Œ ìµœëŒ€í•œ ê°„ë‹¨í•˜ê²Œ
 			MyFunc.m((i, j) -> i+j);   //8
-			MyFunc.m((i, j) -> i-j);   //2 ÀÌ·¸°Ô °£´ÜÇÏ°Ô »¬¼ÀÀ¸·Î ¹Ù²ã¹ö¸²
+			MyFunc.m((i, j) -> i-j);   //2 ì´ë ‡ê²Œ ê°„ë‹¨í•˜ê²Œ ëº„ì…ˆìœ¼ë¡œ ë°”ê¿”ë²„ë¦¼
 		}
 
 	}
 	static class MyFunc{
-		static void m(MyFuncIF func) { //ÆÄ¶ó¹ÌÅÍ·Î Functional Interface¸¦ ±¸ÇöÇÑ °´Ã¼¸¦ ¹Ş´Â´Ù.
+		static void m(MyFuncIF func) { //íŒŒë¼ë¯¸í„°ë¡œ Functional Interfaceë¥¼ êµ¬í˜„í•œ ê°ì²´ë¥¼ ë°›ëŠ”ë‹¤.
 			System.out.println( func.proc1(5,3) );
 		}
 	}

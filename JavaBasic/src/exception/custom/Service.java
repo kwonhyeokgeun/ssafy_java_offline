@@ -3,7 +3,7 @@ package exception.custom;
 public class Service {
 	public int addEmpVocation(EmpDto dto, int days) throws EmpException{
 		if(days>5) {
-			throw new EmpException("ERR_02","ÈŞ°¡ÀÏ¼ö°¡ 5ÀÏ ÃÊ°úÇß½À´Ï´Ù.");
+			throw new EmpException("ERR_02","íœ´ê°€ì¼ìˆ˜ê°€ 5ì¼ ì´ˆê³¼í–ˆìŠµë‹ˆë‹¤.");
 		}
 		Dao dao = new Dao();
 		return dao.addEmpVocation(dto, days);

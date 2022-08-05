@@ -2,11 +2,11 @@ package exception.custom;
 
 public class Dao {
 	public int addEmpVocation(EmpDto dto, int days) throws EmpException{
-		//DB °ü·Ã ÀÛ¾÷ ¼öÇàÀü validation Ã¼Å©
-		if(dto.getEmpNo().indexOf("emp") !=0 ) { //»ç¹øÀÌ  emp·Î ½ÃÀÛÇÏÁö¾ÊÀ½.
-			throw new EmpException("ERR_03","»ç¹øÀÌ ¿Ã¹Ù¸£Áö ¾Ê½À´Ï´Ù."); //ERR_03¸¦ throw
+		//DB ê´€ë ¨ ì‘ì—… ìˆ˜í–‰ì „ validation ì²´í¬
+		if(dto.getEmpNo().indexOf("emp") !=0 ) { //ì‚¬ë²ˆì´  empë¡œ ì‹œì‘í•˜ì§€ì•ŠìŒ.
+			throw new EmpException("ERR_03","ì‚¬ë²ˆì´ ì˜¬ë°”ë¥´ì§€ ì•ŠìŠµë‹ˆë‹¤."); //ERR_03ë¥¼ throw
 		}
-		System.out.println("ÈŞ°¡µî·Ï ¿Ï·á");
+		System.out.println("íœ´ê°€ë“±ë¡ ì™„ë£Œ");
 		return 1;
 	}
 

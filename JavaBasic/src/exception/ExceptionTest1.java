@@ -9,7 +9,7 @@ public class ExceptionTest1 {
 		//FileInputStream fis = new FileInputStream("hello.txt");
 		
 		/*
-		//hello.txt ÆÄÀÏÀ» ÀĞ°í ½Í´Ù.
+		//hello.txt íŒŒì¼ì„ ì½ê³  ì‹¶ë‹¤.
 		try {
 			FileInputStream fis = new FileInputStream("hello.txt");
 		} catch (FileNotFoundException e) {
@@ -33,7 +33,7 @@ public class ExceptionTest1 {
 		System.out.println("end!!");*/
 
 		/*
-		//Hello¶ó´Â Å¬·¡½º Ã£±â		
+		//Helloë¼ëŠ” í´ë˜ìŠ¤ ì°¾ê¸°		
 		FileInputStream fis = null;
 		try {
 			fis = new FileInputStream("hello.txt");

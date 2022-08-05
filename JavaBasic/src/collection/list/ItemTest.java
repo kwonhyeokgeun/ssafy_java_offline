@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 
 public class ItemTest {
 
@@ -45,16 +46,20 @@ public class ItemTest {
 			}
 			return false;
 		}
+		@Override
+		public int hashCode() {
+			return Objects.hash(this.itemId,this.itemNm);
+		}
 		/*
 		@Override
 		public int compareTo(Item o) {
-			//itemId·Î¸¸ ¿À¸§Â÷¼ø Á¤·Ä
+			//itemIdë¡œë§Œ ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬
 			return this.itemId - o.itemId;
 		}*/
 		
 		@Override
 		public int compareTo(Item o) {
-			//itemId, itemNm ±âÁØ ¿À¸§Â÷¼ø Á¤·Ä
+			//itemId, itemNm ê¸°ì¤€ ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬
 			return this.itemId == o.itemId ? this.itemNm.compareTo(o.itemNm) : this.itemId - o.itemId;		
 		}
 	}

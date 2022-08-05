@@ -10,7 +10,7 @@ public class Test {
 			controller.addEmpVocation(dto, 4);
 		} catch (EmpException e) {
 			switch(e.exCode) {
-				//¾Æ·¡ Ã³¸®´Â µ¿ÀÏÇÑÃ³¸® -> Áï switch°¡ ÇÊ¿ä¾ø´Âµ¥ ±¸Á¶ÀûÀ¸·Î º¸±â À§ÇØ¼­ ³ÖÀ½
+				//ì•„ë˜ ì²˜ë¦¬ëŠ” ë™ì¼í•œì²˜ë¦¬ -> ì¦‰ switchê°€ í•„ìš”ì—†ëŠ”ë° êµ¬ì¡°ì ìœ¼ë¡œ ë³´ê¸° ìœ„í•´ì„œ ë„£ìŒ
 				case "ERR_01" : System.out.println(e.exCode + " : " + e.getMessage()); break;
 				case "ERR_02" : System.out.println(e.exCode + " : " + e.getMessage()); break;
 				case "ERR_03" : System.out.println(e.exCode + " : " + e.getMessage()); break;
@@ -19,11 +19,11 @@ public class Test {
 	}
 	
 	static EmpDto getEmpDto() {
-		//return null;    //addEmpVocation(dto, 4)   //ERR_01 (EmpDto ÀÚÃ¼°¡ nullÀÌ¶ó¼­)
-		//return new EmpDto();  //addEmpVocation(dto, 7)  //ERR_01 (empNo°¡ nullÀÌ¶ó¼­)
-		//return new EmpDto("111"); //addEmpVocation(dto, 7); //ERR_02 (ÈŞ°¡ÀÏ¼ö ÃÊ°ú)
-		//return new EmpDto("111"); //addEmpVocation(dto, 4); //ERR_03 (»ç¹øÀÌ emp·Î ½ÃÀÛÇÏÁö ¾ÊÀ½)
-		return new EmpDto("emp111"); //addEmpVocation(dto, 4);  //ÈŞ°¡µî·Ï¿Ï·á
+		//return null;    //addEmpVocation(dto, 4)   //ERR_01 (EmpDto ìì²´ê°€ nullì´ë¼ì„œ)
+		//return new EmpDto();  //addEmpVocation(dto, 7)  //ERR_01 (empNoê°€ nullì´ë¼ì„œ)
+		//return new EmpDto("111"); //addEmpVocation(dto, 7); //ERR_02 (íœ´ê°€ì¼ìˆ˜ ì´ˆê³¼)
+		//return new EmpDto("111"); //addEmpVocation(dto, 4); //ERR_03 (ì‚¬ë²ˆì´ empë¡œ ì‹œì‘í•˜ì§€ ì•ŠìŒ)
+		return new EmpDto("emp111"); //addEmpVocation(dto, 4);  //íœ´ê°€ë“±ë¡ì™„ë£Œ
 	}
 
 }

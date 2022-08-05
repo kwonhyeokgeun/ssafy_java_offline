@@ -3,7 +3,7 @@ package com.ssafy.ws07.step3;
 import java.util.Arrays;
 
 /**
- * µµ¼­¸®½ºÆ®¸¦ ¹è¿­·Î À¯ÁöÇÏ¸ç °ü¸®ÇÏ´Â Å¬·¡½º
+ * ë„ì„œë¦¬ìŠ¤íŠ¸ë¥¼ ë°°ì—´ë¡œ ìœ ì§€í•˜ë©° ê´€ë¦¬í•˜ëŠ” í´ë˜ìŠ¤
  */
 public class BookManager {
 
@@ -14,41 +14,41 @@ public class BookManager {
 	private int size;
 		
 	/**
-	 * µµ¼­¸¦ µµ¼­¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
-	 * @param book : Ãß°¡ÇÒ µµ¼­
+	 * ë„ì„œë¥¼ ë„ì„œë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
+	 * @param book : ì¶”ê°€í•  ë„ì„œ
 	 */
 	public void add(Book book) {
 		if(size<MAX_SIZE) books[size++] = book;
 	}
 	
 	/**
-	 * °íÀ¯¹øÈ£·Î ÇØ´ç µµ¼­¸¦ µµ¼­¸®½ºÆ®¿¡¼­ »èÁ¦ÇÑ´Ù.
-	 * @param isbn : »èÁ¦ÇÒ µµ¼­ÀÇ °íÀ¯¹øÈ£
+	 * ê³ ìœ ë²ˆí˜¸ë¡œ í•´ë‹¹ ë„ì„œë¥¼ ë„ì„œë¦¬ìŠ¤íŠ¸ì—ì„œ ì‚­ì œí•œë‹¤.
+	 * @param isbn : ì‚­ì œí•  ë„ì„œì˜ ê³ ìœ ë²ˆí˜¸
 	 */
 	public void remove(String isbn) {
 		for (int i = 0; i < size; ++i) {
-			// »èÁ¦ÇÒ µµ¼­¸¦ Ã£¾Ò´Ù¸é ÇØ´ç µµ¼­ À§Ä¡¿¡ ¹è¿­ÀÇ Á¦ÀÏ ¸¶Áö¸· µµ¼­¸¦ º¹»ç
+			// ì‚­ì œí•  ë„ì„œë¥¼ ì°¾ì•˜ë‹¤ë©´ í•´ë‹¹ ë„ì„œ ìœ„ì¹˜ì— ë°°ì—´ì˜ ì œì¼ ë§ˆì§€ë§‰ ë„ì„œë¥¼ ë³µì‚¬
 			if (books[i].getIsbn().equals(isbn)) {
 				books[i] = books[size-1];
-				books[size-1]=null;			// »èÁ¦µÈ µµ¼­ À§Ä¡ null Ã³¸®
-				--size;						// µî·ÏµÈ µµ¼­ ¼ö °¨¼Ò
+				books[size-1]=null;			// ì‚­ì œëœ ë„ì„œ ìœ„ì¹˜ null ì²˜ë¦¬
+				--size;						// ë“±ë¡ëœ ë„ì„œ ìˆ˜ ê°ì†Œ
 				break;
 			}
 		}
 	}
 	
 	/**
-	 * µî·ÏµÈ µµ¼­¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
-	 * @return µî·ÏµÈ ÀüÃ¼ µµ¼­¸®½ºÆ®
+	 * ë“±ë¡ëœ ë„ì„œë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
+	 * @return ë“±ë¡ëœ ì „ì²´ ë„ì„œë¦¬ìŠ¤íŠ¸
 	 */
 	public Book[] getList() {
 		return Arrays.copyOfRange(books, 0, size);
 	}
 	
 	/**
-	 * °íÀ¯¹øÈ£·Î ÇØ´ç µµ¼­¸¦ Á¶È¸ÇÑ´Ù.
-	 * @param isbn : Á¶È¸ÇÒ µµ¼­ÀÇ °íÀ¯¹øÈ£
-	 * @return °íÀ¯¹øÈ£¿¡ ÇØ´çÇÏ´Â µµ¼­
+	 * ê³ ìœ ë²ˆí˜¸ë¡œ í•´ë‹¹ ë„ì„œë¥¼ ì¡°íšŒí•œë‹¤.
+	 * @param isbn : ì¡°íšŒí•  ë„ì„œì˜ ê³ ìœ ë²ˆí˜¸
+	 * @return ê³ ìœ ë²ˆí˜¸ì— í•´ë‹¹í•˜ëŠ” ë„ì„œ
 	 */
 	public Book searchByIsbn(String isbn) {
 		for (int i = 0; i < size; ++i) {
@@ -58,19 +58,19 @@ public class BookManager {
 	}
 	
 	/**
-	 * µµ¼­ Á¦¸ñÀ» Æ÷ÇÔÇÏ°í ÀÖ´Â µµ¼­¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
-	 * @param title : Á¶È¸ÇÒ µµ¼­ÀÇ Á¦¸ñ
+	 * ë„ì„œ ì œëª©ì„ í¬í•¨í•˜ê³  ìˆëŠ” ë„ì„œë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
+	 * @param title : ì¡°íšŒí•  ë„ì„œì˜ ì œëª©
 	 * @return
 	 */
 	public Book[] searchByTitle(String title) {
 		int count = 0; 
-		for (int i = 0; i < size; ++i) {	// µµ¼­ Á¦¸ñÀ» Æ÷ÇÔÇÏ´Â µµ¼­ÀÇ °³¼ö Ä«¿îÆ®
+		for (int i = 0; i < size; ++i) {	// ë„ì„œ ì œëª©ì„ í¬í•¨í•˜ëŠ” ë„ì„œì˜ ê°œìˆ˜ ì¹´ìš´íŠ¸
 			if (books[i].getTitle().contains(title)) ++count;
 		}
-		Book[] result = new Book[count];	// °á°ú Ä«¿îÆ®¸¸Å­ ¹è¿­ »ı¼º
+		Book[] result = new Book[count];	// ê²°ê³¼ ì¹´ìš´íŠ¸ë§Œí¼ ë°°ì—´ ìƒì„±
 		int idx = 0;
 		for (int i = 0; i < size; ++i) {
-			if (books[i].getTitle().contains(title)) { // µµ¼­ Á¦¸ñÀ» Æ÷ÇÔÇÏ´Â µµ¼­¸¸ ¹è¿­¿¡ ´ã±â
+			if (books[i].getTitle().contains(title)) { // ë„ì„œ ì œëª©ì„ í¬í•¨í•˜ëŠ” ë„ì„œë§Œ ë°°ì—´ì— ë‹´ê¸°
 				result[idx++] = books[i];
 			}
 		}
@@ -78,18 +78,18 @@ public class BookManager {
 	}
 	
 	/**
-	 * ÀâÁö¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
-	 * @return ÀâÁö¸®½ºÆ®
+	 * ì¡ì§€ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
+	 * @return ì¡ì§€ë¦¬ìŠ¤íŠ¸
 	 */
 	public Magazine[] getMagazines() {
 		int count = 0;
-		for (int i = 0; i < size; ++i) {	// ÀâÁö °³¼ö Ä«¿îÆ®
+		for (int i = 0; i < size; ++i) {	// ì¡ì§€ ê°œìˆ˜ ì¹´ìš´íŠ¸
 			if (books[i] instanceof Magazine) ++count;
 		}
-		Magazine[] result = new Magazine[count];	// °á°ú Ä«¿îÆ®¸¸Å­ ¹è¿­ »ı¼º
+		Magazine[] result = new Magazine[count];	// ê²°ê³¼ ì¹´ìš´íŠ¸ë§Œí¼ ë°°ì—´ ìƒì„±
 		int idx = 0;
 		for (int i = 0; i < size; ++i) {
-			if (books[i] instanceof Magazine) {	// ÀâÁö¸¸ ¹è¿­¿¡ ´ã±â
+			if (books[i] instanceof Magazine) {	// ì¡ì§€ë§Œ ë°°ì—´ì— ë‹´ê¸°
 				result[idx++] = (Magazine)books[i];
 			}
 		}
@@ -97,8 +97,8 @@ public class BookManager {
 	} 
 	
 	/**
-	 * ÀâÁö°¡ ¾Æ´Ñ µµ¼­¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù. 
-	 * @return ÀâÁö°¡ ¾Æ´Ñ µµ¼­¸®½ºÆ®
+	 * ì¡ì§€ê°€ ì•„ë‹Œ ë„ì„œë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤. 
+	 * @return ì¡ì§€ê°€ ì•„ë‹Œ ë„ì„œë¦¬ìŠ¤íŠ¸
 	 */
 	public Book[] getBooks() {
 		int count = 0; 
@@ -117,8 +117,8 @@ public class BookManager {
 	}
 	
 	/**
-	 * µµ¼­¸®½ºÆ®ÀÇ °¡°İÀÇ ÃÑÇÕÀ» ¹İÈ¯ÇÑ´Ù.
-	 * @return ¸ğµç µµ¼­ °¡°İÀÇ ÃÑÇÕ
+	 * ë„ì„œë¦¬ìŠ¤íŠ¸ì˜ ê°€ê²©ì˜ ì´í•©ì„ ë°˜í™˜í•œë‹¤.
+	 * @return ëª¨ë“  ë„ì„œ ê°€ê²©ì˜ ì´í•©
 	 */
 	public int getTotalPrice() {
 		int total = 0;
@@ -129,8 +129,8 @@ public class BookManager {
 	}
 	
 	/**
-	 * µµ¼­°¡°İÀÇ Æò±ÕÀ» ¹İÈ¯ÇÑ´Ù.
-	 * @return ¸ğµç µµ¼­ °¡°İÀÇ Æò±Õ
+	 * ë„ì„œê°€ê²©ì˜ í‰ê· ì„ ë°˜í™˜í•œë‹¤.
+	 * @return ëª¨ë“  ë„ì„œ ê°€ê²©ì˜ í‰ê· 
 	 */
 	public double getPriceAvg() {
 		return (double)getTotalPrice()/ size;

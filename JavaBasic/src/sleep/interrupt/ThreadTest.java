@@ -9,8 +9,8 @@ public class ThreadTest {
 		c1.start();
 		c2.start();
 		
-		Thread.sleep(2000); //¸ŞÀÎ 2ÃÊ sleep
-		c2.interrupt();  //c2¸¦ ±ú¿ì±â
+		Thread.sleep(2000); //ë©”ì¸ 2ì´ˆ sleep
+		c2.interrupt();  //c2ë¥¼ ê¹¨ìš°ê¸°
 		
 	}
 

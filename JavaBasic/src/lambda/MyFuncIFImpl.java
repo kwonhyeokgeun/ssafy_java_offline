@@ -1,6 +1,6 @@
 package lambda;
 
-public class MyFuncIFImpl implements MyFuncIF{ //implementsÇÑ Å¬·¡½º
+public class MyFuncIFImpl implements MyFuncIF{ //implementsí•œ í´ë˜ìŠ¤
 
 	@Override
 	public int proc1(int n1, int n2) {

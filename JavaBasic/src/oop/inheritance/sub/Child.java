@@ -5,7 +5,7 @@ import oop.inheritance.Parent;
 public class Child extends Parent{
 	public Child() {
 		super();
-		System.out.println(super.name); //µğÆúÆ®´Â ´Ù¸¥ ÆĞÅ°Áö¸é ÂüÁ¶¸øÇÔ
+		System.out.println(super.name); //ë””í´íŠ¸ëŠ” ë‹¤ë¥¸ íŒ¨í‚¤ì§€ë©´ ì°¸ì¡°ëª»í•¨
 	}
 
 }

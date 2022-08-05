@@ -7,17 +7,17 @@ public class WildCard {
 		GenericType<?> gt2 = new GenericType<Object>();
 		GenericType<?> gt3 = new GenericType<String>();
 		
-		GenericType<? extends B> gt4 = new GenericType<C>(); //B¸¦ »ó¼Ó¹ŞÀº C
-		//GenericType<? extends B> gt4 = new GenericType<A>(); //¿¡·¯ÀÓ
-		GenericType<? super B> gt5 = new GenericType<A>(); //BÀÇ ºÎ¸ğ A
+		GenericType<? extends B> gt4 = new GenericType<C>(); //Bë¥¼ ìƒì†ë°›ì€ C
+		//GenericType<? extends B> gt4 = new GenericType<A>(); //ì—ëŸ¬ì„
+		GenericType<? super B> gt5 = new GenericType<A>(); //Bì˜ ë¶€ëª¨ A
 		
 		m1( new GenericType<Object>() );
 		m1( new GenericType<C>() );
 		
 		m2( new GenericType<C>());
-		//m2( new GenericType<A>()); //¿¡·¯
+		//m2( new GenericType<A>()); //ì—ëŸ¬
 		m3( new GenericType<A>()); 
-		//m3( new GenericType<C>()); //¿¡·¯
+		//m3( new GenericType<C>()); //ì—ëŸ¬
 		
 	}
 

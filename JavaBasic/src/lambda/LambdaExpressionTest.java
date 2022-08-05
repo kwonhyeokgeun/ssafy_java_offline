@@ -2,11 +2,11 @@ package lambda;
 
 public class LambdaExpressionTest {
 	public static void main(String[] args) {
-		useFuncIF.exec1(() -> {      //ÆÄ¶ó¹ÌÅÍ·Î FuncIF1À» ±¸ÇöÇÑ °´Ã¼°¡ ¿À¸éµÊ.
+		useFuncIF.exec1(() -> {      //íŒŒë¼ë¯¸í„°ë¡œ FuncIF1ì„ êµ¬í˜„í•œ ê°ì²´ê°€ ì˜¤ë©´ë¨.
 			System.out.println("Hello");  
 		});
 		
-		useFuncIF.exec1(() -> {      //ÀÌ·¸°Ô »õ·Ó°Ô »ç¿ë °¡´É
+		useFuncIF.exec1(() -> {      //ì´ë ‡ê²Œ ìƒˆë¡­ê²Œ ì‚¬ìš© ê°€ëŠ¥
 			System.out.println("SSAFY");  
 		});
 		
@@ -20,13 +20,13 @@ public class LambdaExpressionTest {
 			return n1+n2;  
 		});
 		
-		useFuncIF.exec2(() -> sm1());  //ÀÌ·¸°Ôµµ °¡´É
+		useFuncIF.exec2(() -> sm1());  //ì´ë ‡ê²Œë„ ê°€ëŠ¥
 		
 //		useFuncIF.exec3((n) -> "Hello");
-//		useFuncIF.exec3(n -> "Hello"); //ÆÄ¶ó¹ÌÅÍ°¡ 1°³¸é ()¾ÈÇØµµ µÊ
+//		useFuncIF.exec3(n -> "Hello"); //íŒŒë¼ë¯¸í„°ê°€ 1ê°œë©´ ()ì•ˆí•´ë„ ë¨
 //		useFuncIF.exec3(n -> {
-//			if(n%2==0) return "Â¦¼öÀÔ´Ï´Ù";
-//			else return "È¦¼öÀÔ´Ï´Ù";
+//			if(n%2==0) return "ì§ìˆ˜ì…ë‹ˆë‹¤";
+//			else return "í™€ìˆ˜ì…ë‹ˆë‹¤";
 //		});
 //		
 //		useFuncIF.exec4((n1,n2) -> n1+n2); 
@@ -37,35 +37,35 @@ public class LambdaExpressionTest {
 		);
 	}
 	
-	//´©±º°¡°¡ ¾Æ·¡ÀÇ interface¸¦ ±¸ÇöÇÑ °´Ã¼¸¦ ÇÊ¿ä·Î ÇÑ´Ù.
-	static interface FuncIF1{ void m();}  //ÆÄ¶ó¹ÌÅÍ x, ¸®ÅÏ x
-	static interface FuncIF2{ int m();}  //ÆÄ¶ó¹ÌÅÍ x, ¸®ÅÏ int
-	static interface FuncIF3{ String m(int n);}  //ÆÄ¶ó¹ÌÅÍ o, ¸®ÅÏ String
-	static interface FuncIF4{ int m(int n1, int n2);}  //ÆÄ¶ó¹ÌÅÍ 2°³, ¸®ÅÏ int
+	//ëˆ„êµ°ê°€ê°€ ì•„ë˜ì˜ interfaceë¥¼ êµ¬í˜„í•œ ê°ì²´ë¥¼ í•„ìš”ë¡œ í•œë‹¤.
+	static interface FuncIF1{ void m();}  //íŒŒë¼ë¯¸í„° x, ë¦¬í„´ x
+	static interface FuncIF2{ int m();}  //íŒŒë¼ë¯¸í„° x, ë¦¬í„´ int
+	static interface FuncIF3{ String m(int n);}  //íŒŒë¼ë¯¸í„° o, ë¦¬í„´ String
+	static interface FuncIF4{ int m(int n1, int n2);}  //íŒŒë¼ë¯¸í„° 2ê°œ, ë¦¬í„´ int
 	static interface FuncIF5{ MyClass m(MyClass mc1, MyClass mc2);}
 	
 	static int sm1() { return 1;}
 	
-	//ÀÌ ³à¼®ÀÌ ±¸ÇöÇÔ. (»ç¿ëÀÚ)
+	//ì´ ë…€ì„ì´ êµ¬í˜„í•¨. (ì‚¬ìš©ì)
 	static class useFuncIF{
 		public static void exec1(FuncIF1 funcIFImpl) {
 			funcIFImpl.m();
 		}
 		
 		public static void exec2(FuncIF2 funcIFImpl) {
-			System.out.println(funcIFImpl.m());  //¸®ÅÏ°á°ú Ãâ·Â
+			System.out.println(funcIFImpl.m());  //ë¦¬í„´ê²°ê³¼ ì¶œë ¥
 		}
 		public static void exec3(FuncIF3 funcIFImpl) {
-			System.out.println(funcIFImpl.m(5));  //¸®ÅÏ°á°ú Ãâ·Â
+			System.out.println(funcIFImpl.m(5));  //ë¦¬í„´ê²°ê³¼ ì¶œë ¥
 		}
 		public static void exec4(FuncIF4 funcIFImpl) {
-			System.out.println(funcIFImpl.m(7,2));  //¸®ÅÏ°á°ú Ãâ·Â
+			System.out.println(funcIFImpl.m(7,2));  //ë¦¬í„´ê²°ê³¼ ì¶œë ¥
 		}
 		public static void exec4(int n1, int n2, FuncIF4 funcIFImpl) {
-			System.out.println(funcIFImpl.m(n1, n2));  //¸®ÅÏ°á°ú Ãâ·Â
+			System.out.println(funcIFImpl.m(n1, n2));  //ë¦¬í„´ê²°ê³¼ ì¶œë ¥
 		}
 		public static void exec5(MyClass mc1, MyClass mc2, FuncIF5 funcIFImpl) {
-			System.out.println(funcIFImpl.m(mc1, mc2));  //¸®ÅÏ°á°ú Ãâ·Â
+			System.out.println(funcIFImpl.m(mc1, mc2));  //ë¦¬í„´ê²°ê³¼ ì¶œë ¥
 		}
 	}
 	

@@ -1,9 +1,9 @@
 package lambda;
 
-@FunctionalInterface  //@FunctionalInterface¶ó´Â ¶æ, ÇÔ¼ö ÇÑ°³¸¸ °¡Áú ¼ö ÀÖÀ½
+@FunctionalInterface  //@FunctionalInterfaceë¼ëŠ” ëœ», í•¨ìˆ˜ í•œê°œë§Œ ê°€ì§ˆ ìˆ˜ ìˆìŒ
 public interface MyFuncIF {
-	int proc1(int n1, int n2);  //ÇÑ°³¸¸ °¡Áú ¼ö ÀÖÀ½
-	default int proc2(int n1, int n2) { //µğÆúÆ®´Â ¿©·¯°³ °¡´É
+	int proc1(int n1, int n2);  //í•œê°œë§Œ ê°€ì§ˆ ìˆ˜ ìˆìŒ
+	default int proc2(int n1, int n2) { //ë””í´íŠ¸ëŠ” ì—¬ëŸ¬ê°œ ê°€ëŠ¥
 		return n1-n2;
 	}
 }

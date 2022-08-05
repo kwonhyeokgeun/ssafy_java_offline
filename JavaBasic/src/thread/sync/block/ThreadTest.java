@@ -6,7 +6,7 @@ public class ThreadTest {
 		Gas gas = new Gas();
 		gas.setAmount(100);
 		
-		for(int i=0; i<1000; i++) {  //1000°³ÀÇ ct¿Í pt run
+		for(int i=0; i<1000; i++) {  //1000ê°œì˜ ctì™€ pt run
 			ConsumerThread ct = new ConsumerThread(gas);
 			ProducerThread pt = new ProducerThread(gas);
 			

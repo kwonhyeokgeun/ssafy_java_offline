@@ -14,10 +14,10 @@ public class Test {
 		System.out.println();
 		m(c); 
 		System.out.println();
-		m(d); 	         //µ¿ÀÏÇÑ ¶Ç´Â »óÀ§ Å¸ÀÔÀ¸·Î ½ÇÇàµÊ
+		m(d); 	         //ë™ì¼í•œ ë˜ëŠ” ìƒìœ„ íƒ€ì…ìœ¼ë¡œ ì‹¤í–‰ë¨
 		System.out.println();
 		
-		B bd = new D();  //ÆÄ¶ó¹ÌÅÍ·Î Àü´Ş ½Ã Å¸ÀÔÀº ¿ŞÂÊÀ» ±âÁØ
+		B bd = new D();  //íŒŒë¼ë¯¸í„°ë¡œ ì „ë‹¬ ì‹œ íƒ€ì…ì€ ì™¼ìª½ì„ ê¸°ì¤€
 		m(bd); 
 		System.out.println();
 		C cd = new D();
@@ -34,13 +34,13 @@ public class Test {
 	
 	static void m2(A a) {
 		if(a instanceof D) {
-			System.out.println("D °´Ã¼");
+			System.out.println("D ê°ì²´");
 		}else if(a instanceof C) {
-			System.out.println("C °´Ã¼");
+			System.out.println("C ê°ì²´");
 		}else if(a instanceof B) {
-			System.out.println("B °´Ã¼");
+			System.out.println("B ê°ì²´");
 		}else if(a instanceof A) {
-			System.out.println("A °´Ã¼");
+			System.out.println("A ê°ì²´");
 		}
 	}
 

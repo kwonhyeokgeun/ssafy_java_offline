@@ -1,30 +1,30 @@
 package com.ssafy.ws07.step3;
 
 /**
- * µµ¼­ Á¤º¸¸¦ ³ªÅ¸³»´Â Å¬·¡½º
+ * ë„ì„œ ì •ë³´ë¥¼ ë‚˜íƒ€ë‚´ëŠ” í´ë˜ìŠ¤
  */
 public class Book {
-	/** °íÀ¯ ¹øÈ£ */
+	/** ê³ ìœ  ë²ˆí˜¸ */
 	private String isbn;		
-	/**	Á¦¸ñ */
+	/**	ì œëª© */
 	private String title;		
-	/** ÀúÀÚ */
+	/** ì €ì */
 	private String author;		
-	/** ÃâÆÇ»ç */
+	/** ì¶œíŒì‚¬ */
 	private String publisher;	
-	/** °¡°İ */
+	/** ê°€ê²© */
 	private int price;			
-	/**	¼³¸í */
+	/**	ì„¤ëª… */
 	private String desc;	
 	private int quantity;
 
-	/** ±âº» »ı¼ºÀÚ */
+	/** ê¸°ë³¸ ìƒì„±ì */
 	public Book() {
 	}
-	/** µµ¼­ Á¤º¸¸¦ ¸ğµÎ ¹Ş¾Æ »ı¼ºÇÏ´Â »ı¼ºÀÚ */
+	/** ë„ì„œ ì •ë³´ë¥¼ ëª¨ë‘ ë°›ì•„ ìƒì„±í•˜ëŠ” ìƒì„±ì */
 	public Book(String isbn, String title, String author, String publisher, 
 			int price, String desc, int quantity){
-		// ¹ŞÀº Á¤º¸·Î °´Ã¼ÀÇ »óÅÂ¸¦ ÃÊ±âÈ­ÇÑ´Ù.
+		// ë°›ì€ ì •ë³´ë¡œ ê°ì²´ì˜ ìƒíƒœë¥¼ ì´ˆê¸°í™”í•œë‹¤.
 		this.isbn = isbn;
 		this.title = title;
 		this.author = author;

@@ -6,7 +6,7 @@ public class ISBNNotFoundException extends Exception{
 	private String isbn;
 	
 	public ISBNNotFoundException(String isbn) {
-		super(isbn +" µµ¼­°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
+		super(isbn +" ë„ì„œê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 		this.isbn = isbn;
 	}
 	

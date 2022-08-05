@@ -29,16 +29,16 @@ public class Test {
 		/*
 		A ab = new B();
 		ab.a();
-		//ab.a(1);  //¿¡·¯ÀÓ Áï ¸Þ¼Òµå È£Ãâ ÆÇ´ÜÀº ¾ÕÂÊÀ» º¸°í ÆÇ´ÜÇÔ.
+		//ab.a(1);  //ì—ëŸ¬ìž„ ì¦‰ ë©”ì†Œë“œ í˜¸ì¶œ íŒë‹¨ì€ ì•žìª½ì„ ë³´ê³  íŒë‹¨í•¨.
 		
 		A ac = new C();
-		ac.a();   //CÀÇ °ÍÀÌ Ãâ·ÂµÊ. ÀÏ´Ü È£ÃâÀÌ °¡´ÉÇÏ´Ù¸é µÚÂÊ°Å¸¦ È£ÃâÇÔ
-		//ac.c();  /¿¡·¯ÀÓ c´Â A¿¡ ¾øÀ½
+		ac.a();   //Cì˜ ê²ƒì´ ì¶œë ¥ë¨. ì¼ë‹¨ í˜¸ì¶œì´ ê°€ëŠ¥í•˜ë‹¤ë©´ ë’¤ìª½ê±°ë¥¼ í˜¸ì¶œí•¨
+		//ac.c();  /ì—ëŸ¬ìž„ cëŠ” Aì— ì—†ìŒ
 		B bc = new C();
-		bc.a();  //À§¿Í °°ÀÌ CÀÇ °ÍÀÌ Ãâ·ÂµÊ.
+		bc.a();  //ìœ„ì™€ ê°™ì´ Cì˜ ê²ƒì´ ì¶œë ¥ë¨.
 		
 		B bd = new D();
-		bd.a(); //CÀÇ °ÍÀÌ È£ÃâµÊ D´Â a°¡ ¾ø°í B¿¡´Â »ó¼Ó¹Þ¾Æ¼­ ÀÖ´Âµ¥ C¿¡µµ ÀÖ¾î¼­
+		bd.a(); //Cì˜ ê²ƒì´ í˜¸ì¶œë¨ DëŠ” aê°€ ì—†ê³  Bì—ëŠ” ìƒì†ë°›ì•„ì„œ ìžˆëŠ”ë° Cì—ë„ ìžˆì–´ì„œ
 		*/
 		
 		A ab = new B();
@@ -57,11 +57,11 @@ public class Test {
 		/*
 	  	A ab = new B();
 		ab.a();      //A - a()
-		//ab.a(1);  //¿¡·¯
+		//ab.a(1);  //ì—ëŸ¬
 		
 		A ac = new C();
 		ac.a();   //C - a()
-		//ac.c();  /¿¡·¯
+		//ac.c();  /ì—ëŸ¬
 		
 		B bc = new C();
 		bc.a();  //C - a()

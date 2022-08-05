@@ -1,40 +1,40 @@
 package com.ssafy.ws07.step3;
 
 /**
- * BookManager Å¬·¡½º¸¦ ÀÌ¿ëÇÏ¿© µµ¼­ °´Ã¼ Ãß°¡,»èÁ¦,Á¶È¸ÇÏ´Â Å¬·¡½º
+ * BookManager í´ë˜ìŠ¤ë¥¼ ì´ìš©í•˜ì—¬ ë„ì„œ ê°ì²´ ì¶”ê°€,ì‚­ì œ,ì¡°íšŒí•˜ëŠ” í´ë˜ìŠ¤
  */
 public class BookTest {
 
 	public static void main(String[] args) throws Exception{
 		
-		// µµ¼­ ¸®½ºÆ®¸¦ À¯ÁöÇÏ°í °ü¸®ÇÏ´Â BookManager °´Ã¼¸¦ »ı¼ºÇÑ´Ù.
+		// ë„ì„œ ë¦¬ìŠ¤íŠ¸ë¥¼ ìœ ì§€í•˜ê³  ê´€ë¦¬í•˜ëŠ” BookManager ê°ì²´ë¥¼ ìƒì„±í•œë‹¤.
 		IBookManager bookManager = BookManagerImpl.getBookManagerImpl();
-		// BookManager °´Ã¼¸¦ ÀÌ¿ëÇØ  µµ¼­, ÀâÁö Á¤º¸¸¦ Ãß°¡ÇÑ´Ù.
-		bookManager.add(new Book("21424", "Java Pro", "±èÇÏ³ª", "jaen.kr", 15000, "Java ±âº» ¹®¹ı",10));
-		bookManager.add(new Book("21425", "Java Pro2", "±èÇÏ³ª", "jaen.kr", 25000, "Java ÀÀ¿ë",20));
-		bookManager.add(new Book("35355", "ºĞ¼®¼³°è", "¼Ò³ª¹«", "jaen.kr", 30000, "SW ¸ğµ¨¸µ",30));
-		bookManager.add(new Magazine("45678", "¿ù°£ ¾Ë°í¸®Áò", "È«±æµ¿", "jaen.kr", 10000, "1¿ù ¾Ë°í¸®Áò", 2021, 1,40));
+		// BookManager ê°ì²´ë¥¼ ì´ìš©í•´  ë„ì„œ, ì¡ì§€ ì •ë³´ë¥¼ ì¶”ê°€í•œë‹¤.
+		bookManager.add(new Book("21424", "Java Pro", "ê¹€í•˜ë‚˜", "jaen.kr", 15000, "Java ê¸°ë³¸ ë¬¸ë²•",10));
+		bookManager.add(new Book("21425", "Java Pro2", "ê¹€í•˜ë‚˜", "jaen.kr", 25000, "Java ì‘ìš©",20));
+		bookManager.add(new Book("35355", "ë¶„ì„ì„¤ê³„", "ì†Œë‚˜ë¬´", "jaen.kr", 30000, "SW ëª¨ë¸ë§",30));
+		bookManager.add(new Magazine("45678", "ì›”ê°„ ì•Œê³ ë¦¬ì¦˜", "í™ê¸¸ë™", "jaen.kr", 10000, "1ì›” ì•Œê³ ë¦¬ì¦˜", 2021, 1,40));
 
-		System.out.println("**********************µµ¼­ ÀüÃ¼ ¸ñ·Ï**********************");
+		System.out.println("**********************ë„ì„œ ì „ì²´ ëª©ë¡**********************");
 		for (Book b : bookManager.getList()) {
 			System.out.println(b);
 		}
-		System.out.println("**********************ÀÏ¹İ µµ¼­ ¸ñ·Ï**********************");
+		System.out.println("**********************ì¼ë°˜ ë„ì„œ ëª©ë¡**********************");
 		for (Book b : bookManager.getBooks()) {
 			System.out.println(b);
 		}
-		System.out.println("**********************ÀâÁö ¸ñ·Ï**********************");
+		System.out.println("**********************ì¡ì§€ ëª©ë¡**********************");
 		for (Magazine b : bookManager.getMagazines()) {
 			System.out.println(b);
 		}
-		System.out.println("**********************µµ¼­ Á¦¸ñ Æ÷ÇÔ°Ë»ö:Java**********************");
+		System.out.println("**********************ë„ì„œ ì œëª© í¬í•¨ê²€ìƒ‰:Java**********************");
 		for (Book b : bookManager.searchByTitle("Java")) {
 			System.out.println(b);
 		}
-		System.out.println("µµ¼­ °¡°İ ÃÑÇÕ : "+bookManager.getTotalPrice());
-		System.out.println("µµ¼­ °¡°İ Æò±Õ: "+bookManager.getPriceAvg());	
+		System.out.println("ë„ì„œ ê°€ê²© ì´í•© : "+bookManager.getTotalPrice());
+		System.out.println("ë„ì„œ ê°€ê²© í‰ê· : "+bookManager.getPriceAvg());	
 		
-		System.out.println("**********************µµ¼­ ±¸¸Å**********************");
+		System.out.println("**********************ë„ì„œ êµ¬ë§¤**********************");
 		try {
 			bookManager.buy("1111", 20);	
 		}catch(ISBNNotFoundException e){

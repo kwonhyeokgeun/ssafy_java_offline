@@ -9,38 +9,38 @@ import java.util.List;
 public class Test {
 	public static void main(String[] args) {
 		{
-			ArrayList al = new ArrayList(); //Å¸ÀÔ ºÎÀç
+			ArrayList al = new ArrayList(); //íƒ€ì… ë¶€ì¬
 		}
 		{
-			ArrayList<String> al2 = new ArrayList<>(); //ºñÃßÃµ
-			List<String> al = new ArrayList<>(); //ÀÌ°Ô ÀÏ¹İÀû
-			al.add("¼ÕÈï¹Î");
-			al.add("ÀÌ°­ÀÎ");
-			al.add("ÀÌ½Â¿ì");
+			ArrayList<String> al2 = new ArrayList<>(); //ë¹„ì¶”ì²œ
+			List<String> al = new ArrayList<>(); //ì´ê²Œ ì¼ë°˜ì 
+			al.add("ì†í¥ë¯¼");
+			al.add("ì´ê°•ì¸");
+			al.add("ì´ìŠ¹ìš°");
 			System.out.println(al);
 			
-			al.add("ÀÌ°­ÀÎ");  //Áßº¹°¡´É
+			al.add("ì´ê°•ì¸");  //ì¤‘ë³µê°€ëŠ¥
 			System.out.println(al);
 			
-			al.remove(0); //0¹øÂ° Á¦°Å
+			al.remove(0); //0ë²ˆì§¸ ì œê±°
 			System.out.println(al);
 			
-			al.remove("ÀÌ°­ÀÎ");  //°ªÀÌ ÀÌ°­ÀÎ ÀÎ°Å ¾Õ¿¡°Å Á¦°Å
+			al.remove("ì´ê°•ì¸");  //ê°’ì´ ì´ê°•ì¸ ì¸ê±° ì•ì—ê±° ì œê±°
 			System.out.println(al);
 			
-			al.remove("ÀÌ½Â¿ì");
+			al.remove("ì´ìŠ¹ìš°");
 			System.out.println(al);
 			
-			al.remove("ÀÌ½Â¿ì");  //¾ø´Â °ª Á¦°Å //¿¡·¯ ¾È³²
-			System.out.println(al);  //º¯È­ ¾øÀ½
+			al.remove("ì´ìŠ¹ìš°");  //ì—†ëŠ” ê°’ ì œê±° //ì—ëŸ¬ ì•ˆë‚¨
+			System.out.println(al);  //ë³€í™” ì—†ìŒ
 		
 		}
-		{//¼øÈ¸
-			List<String> al = new ArrayList<>(); //ÀÌ°Ô ÀÏ¹İÀû
-			al.add("¼ÕÈï¹Î");
-			al.add("ÀÌ°­ÀÎ");
-			al.add("ÀÌ½Â¿ì");
-			al.add("ÀÌ°­ÀÎ");
+		{//ìˆœíšŒ
+			List<String> al = new ArrayList<>(); //ì´ê²Œ ì¼ë°˜ì 
+			al.add("ì†í¥ë¯¼");
+			al.add("ì´ê°•ì¸");
+			al.add("ì´ìŠ¹ìš°");
+			al.add("ì´ê°•ì¸");
 			
 			for(int i=0; i<al.size(); i++) {
 				String s = al.get(i);
@@ -59,29 +59,29 @@ public class Test {
 		}
 		{
 			List<String> al = new ArrayList<>(); 
-			al.add("¼ÕÈï¹Î");
-			al.add("ÀÌ°­ÀÎ");
-			al.add("ÀÌ°­ÀÎ");
-			al.add("ÀÌ½Â¿ì");
+			al.add("ì†í¥ë¯¼");
+			al.add("ì´ê°•ì¸");
+			al.add("ì´ê°•ì¸");
+			al.add("ì´ìŠ¹ìš°");
 			
-			for(int i=al.size()-1; i>=0;i--) {  //»èÁ¦´Â µÚºÎÅÍÇÏ±â 
+			for(int i=al.size()-1; i>=0;i--) {  //ì‚­ì œëŠ” ë’¤ë¶€í„°í•˜ê¸° 
 				String s = al.get(i);
-				if(s.equals("ÀÌ°­ÀÎ")) al.remove(i);
+				if(s.equals("ì´ê°•ì¸")) al.remove(i);
 			}
 			System.out.println(al);
 		}
 		{
-			List<String> al = new ArrayList<>(); //ÀÌ°Ô ÀÏ¹İÀû
-			al.add("¼ÕÈï¹Î");
-			al.add("ÀÌ°­ÀÎ");
-			al.add("ÀÌ°­ÀÎ");
-			al.add("ÀÌ½Â¿ì");
+			List<String> al = new ArrayList<>(); //ì´ê²Œ ì¼ë°˜ì 
+			al.add("ì†í¥ë¯¼");
+			al.add("ì´ê°•ì¸");
+			al.add("ì´ê°•ì¸");
+			al.add("ì´ìŠ¹ìš°");
 			
-			//¾Õ¿¡¼­ºÎÅÍ »èÁ¦ ÇÏ·Á¸é ÀÌÅÍ·¹ÀÌÅÍ.remove()
+			//ì•ì—ì„œë¶€í„° ì‚­ì œ í•˜ë ¤ë©´ ì´í„°ë ˆì´í„°.remove()
 			Iterator<String> it = al.iterator();
 			while(it.hasNext()) {
 				String s =it.next();
-				if(s.equals("ÀÌ°­ÀÎ")) it.remove(); //al.remove°¡ ¾Æ´Ñ ÀÌÅÍ.remove();
+				if(s.equals("ì´ê°•ì¸")) it.remove(); //al.removeê°€ ì•„ë‹Œ ì´í„°.remove();
 			}
 			System.out.println(al);
 		}
@@ -97,10 +97,10 @@ public class Test {
 		
 		{
 			List<String> al = new ArrayList<>();
-			al.add("ÀÌ½Â¿ì");
-			al.add("ÀÌ°­ÀÎ");
-			al.add("¼ÕÈï¹Î");
-			al.add("ÀÌ°­ÀÎ");
+			al.add("ì´ìŠ¹ìš°");
+			al.add("ì´ê°•ì¸");
+			al.add("ì†í¥ë¯¼");
+			al.add("ì´ê°•ì¸");
 			System.out.println(al);
 			Collections.sort(al);		
 			System.out.println(al);

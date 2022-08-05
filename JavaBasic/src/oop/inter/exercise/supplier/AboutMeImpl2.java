@@ -6,17 +6,17 @@ public class AboutMeImpl2 implements AboutMe{
 
 	@Override
 	public String yourName() {
-		return "±ÇÇõ±Ù";
+		return "ê¶Œí˜ê·¼";
 	}
 
 	@Override
 	public String yourFavoriteCompany() {
-		return "»ï¼º";
+		return "ì‚¼ì„±";
 	}
 
 	@Override
 	public String supportMessageToAll() {
-		return "ÀÌ¹øÁÖµµ Àß ¹öÅßºÁ¿ä!";
+		return "ì´ë²ˆì£¼ë„ ì˜ ë²„í…¨ë´ìš”!";
 	}
 
 }

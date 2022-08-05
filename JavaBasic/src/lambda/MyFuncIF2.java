@@ -1,6 +1,6 @@
 package lambda;
 
-public interface MyFuncIF2 {  //Æò¹üÇÑ ÀÎÅÍÆäÀÌ½º
+public interface MyFuncIF2 {  //í‰ë²”í•œ ì¸í„°í˜ì´ìŠ¤
 	int proc1(int n1, int n2);  
 	int proc2(int n1, int n2);
 }

@@ -3,7 +3,7 @@ package exception.custom;
 public class Controller {
 	public int addEmpVocation(EmpDto dto, int days) throws EmpException{
 		if(dto==null || dto.getEmpNo() == null) {
-			throw new EmpException("ERR_01","»ç¿øÁ¤º¸°¡ ¾ø½À´Ï´Ù.");
+			throw new EmpException("ERR_01","ì‚¬ì›ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤.");
 		}
 		Service service = new Service();
 		return service.addEmpVocation(dto, days);

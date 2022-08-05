@@ -1,13 +1,13 @@
 package design.singleton;
 
 public class Logger {
-	//#3 ÀÚ½Å°ú µ¿ÀÏÇÑ Å¸ÀÔÀÇ ¸â¹ö º¯¼ö¸¦ staticÀ¸·Î ¼±¾ğ
+	//#3 ìì‹ ê³¼ ë™ì¼í•œ íƒ€ì…ì˜ ë©¤ë²„ ë³€ìˆ˜ë¥¼ staticìœ¼ë¡œ ì„ ì–¸
 	private static Logger logger;
 	
-	//#1 »ı¼ºÀÚ¸¦ private·Î
+	//#1 ìƒì„±ìë¥¼ privateë¡œ
 	private Logger() {}
 	
-	//#2 ¿ÜºÎ¿¡ °´Ã¼¸¦ ÇÑ°³¸¸ Á¦°øÇÏ´Â ¸Ş¼Òµå ±¸Çö
+	//#2 ì™¸ë¶€ì— ê°ì²´ë¥¼ í•œê°œë§Œ ì œê³µí•˜ëŠ” ë©”ì†Œë“œ êµ¬í˜„
 	public static Logger getInstance() {
 		if (logger == null)
 			logger = new Logger();

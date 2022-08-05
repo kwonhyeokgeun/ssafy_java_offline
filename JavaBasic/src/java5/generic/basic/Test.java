@@ -8,12 +8,12 @@ public class Test {
 	public static void main(String[] args) {
 		ObjectContainer oc = new ObjectContainer();
 		oc.setElement("String");
-		String str = (String) oc.getElement(); //Å¸ÀÔÀ» ¾Ë°íÀÖ´Â °æ¿ì
-		if(oc.getElement() instanceof String) { //Å¸ÀÔÀ» ¸ğ¸£´Â °æ¿ì
+		String str = (String) oc.getElement(); //íƒ€ì…ì„ ì•Œê³ ìˆëŠ” ê²½ìš°
+		if(oc.getElement() instanceof String) { //íƒ€ì…ì„ ëª¨ë¥´ëŠ” ê²½ìš°
 			String str2 = (String) oc.getElement();
 		}
 		
-		StringContainer sc = new StringContainer(); //ÇÑ°¡Áö Å¸ÀÔ¸¸ ¾²´Â °æ¿ì
+		StringContainer sc = new StringContainer(); //í•œê°€ì§€ íƒ€ì…ë§Œ ì“°ëŠ” ê²½ìš°
 		sc.setElement("String");
 		String str3 = sc.getElement();
 		

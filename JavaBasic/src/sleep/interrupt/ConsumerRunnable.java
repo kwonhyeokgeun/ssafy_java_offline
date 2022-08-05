@@ -14,7 +14,7 @@ public class ConsumerRunnable implements Runnable{
 		for(int i=0; i<1000; i++) {
 			System.out.println("#"+num +" : " + i);
 			
-			if(i==500) { //°¡ 500ÀÌ¸é 5ÃÊ°£ sleepÇÏ±â
+			if(i==500) { //ê°€ 500ì´ë©´ 5ì´ˆê°„ sleepí•˜ê¸°
 				try {
 					Thread.sleep(5000);
 				} catch (InterruptedException e) {

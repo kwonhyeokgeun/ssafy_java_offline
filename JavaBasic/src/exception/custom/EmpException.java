@@ -3,7 +3,7 @@ package exception.custom;
 public class EmpException extends Exception{
 	private static final long serialVersionUID = 1L;
 	
-	String exCode; //1-¾ø´Â ¹øÈ£, 2-ÈŞ°¡ ÀÏ¼ö°¡ 5ÀÏ ÃÊ°ú, 3-»ç¹øÀÌ ¿Ã¹Ù¸£Áö ¾Ê´Ù.
+	String exCode; //1-ì—†ëŠ” ë²ˆí˜¸, 2-íœ´ê°€ ì¼ìˆ˜ê°€ 5ì¼ ì´ˆê³¼, 3-ì‚¬ë²ˆì´ ì˜¬ë°”ë¥´ì§€ ì•Šë‹¤.
 	
 	public EmpException() {	}
 	public EmpException(String message) {
